@@ -1,0 +1,39 @@
+# 카톡 공채 매입률 표를 한 번 읽어서 저장 (수동 실행 전용)
+name: cartok-dump
+on:
+  workflow_dispatch: {}
+permissions:
+  contents: write
+jobs:
+  dump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install playwright && python -m playwright install --with-deps chromium
+      - name: 읽기
+        run: |
+          mkdir -p data/raw
+          python - <<'PY'
+          from playwright.sync_api import sync_playwright
+          U = {"gongchae": "http://ajax.cartok.com/?dir=cartax&job=tax&tab=gongchae",
+               "tax": "http://ajax.cartok.com/?dir=cartax&job=tax",
+               "bond": "http://ajax.cartok.com/?dir=cartax&job=bond"}
+          with sync_playwright() as p:
+              b = p.chromium.launch(); pg = b.new_page(locale="ko-KR")
+              for k, u in U.items():
+                  try:
+                      pg.goto(u, timeout=60000, wait_until="networkidle"); pg.wait_for_timeout(2500)
+                      open(f"data/raw/{k}.txt", "w").write(pg.inner_text("body"))
+                      open(f"data/raw/{k}.html", "w").write(pg.content())
+                  except Exception as e:
+                      open(f"data/raw/{k}.txt", "w").write("ERR " + str(e))
+              b.close()
+          PY
+      - name: 저장
+        run: |
+          git config user.name "benznews-bot"; git config user.email "bot@benznews.net"
+          git add data; git diff --cached --quiet || git commit -m "카톡 공채 표 저장"
+          git pull --rebase || true
+          git push
