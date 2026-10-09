@@ -1,5 +1,10 @@
 [
   {
+    "at": "2026-10-09T12:05:33+09:00",
+    "ok": false,
+    "why": "text not found (browser)"
+  },
+  {
     "at": "2026-10-09T11:49:34+09:00",
     "ok": false,
     "why": "text not found",
