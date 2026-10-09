@@ -1,0 +1,27 @@
+# 공채 즉시매도 할인율 · 매일 오전 9시 5분(한국시간) 자동 갱신 · 브라우저로 화면을 열어 읽음
+name: bond-rate
+on:
+  schedule:
+    - cron: "5 0 * * *"
+  workflow_dispatch: {}
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install playwright && python -m playwright install --with-deps chromium
+      - name: 할인율 읽어오기
+        env:
+          BOND_URL: ${{ vars.BOND_URL }}
+        run: python scripts/fetch_bond2.py
+      - name: 저장
+        run: |
+          git config user.name  "benznews-bot"
+          git config user.email "bot@benznews.net"
+          git add data
+          git diff --cached --quiet || git commit -m "공채 할인율 자동 갱신 $(TZ=Asia/Seoul date +%F)"
+          git push
