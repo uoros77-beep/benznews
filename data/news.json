@@ -1,6 +1,30 @@
 {
-  "updated": "2026-11-08",
+  "updated": "2026-11-09",
   "items": [
+    {
+      "id": "2026-11-09-vle-4matic",
+      "date": "2026-11-09",
+      "cat": "신차",
+      "kr": "국내 출시 미정",
+      "title": "전기 MPV VLE, 사륜구동 VLE 400 4MATIC 주문 시작",
+      "points": [
+        "벤츠가 전기 MPV VLE의 주문 선택지를 넓혀, 사륜구동 VLE 400 4MATIC을 독일에서 바로 주문할 수 있게 했습니다.",
+        "VLE 400 4MATIC은 310kW로 라인업 최고 출력이고, 115kWh 배터리로 WLTP 기준 최대 654km를 달리며 0에서 100km/h까지 6.5초입니다.",
+        "독일 시작 가격은 VLE 300 5인승 70,735.39유로, VLE 400 4MATIC 5인승 85,059.68유로(부가세 포함)이며, 좌석은 최대 8인승까지 고를 수 있습니다."
+      ],
+      "note": "이번 발표는 독일 기준이며, 국내 출시 일정과 가격은 아직 공식 발표되지 않았습니다.",
+      "photos": [],
+      "links": [
+        {
+          "href": "vle.html",
+          "label": "VLE 보기"
+        }
+      ],
+      "src": {
+        "name": "Mercedes-Benz Media",
+        "url": "https://media.mercedes-benz.com/article/d8b5948f-c137-48c9-ab8c-e00c4fe598ab"
+      }
+    },
     {
       "id": "2026-11-06-sl55-wta",
       "date": "2026-11-06",
