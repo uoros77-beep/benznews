@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-09",
+  "updated": "2026-11-11",
   "items": [
     {
       "id": "2026-11-09-vle-4matic",
@@ -23,6 +23,25 @@
       "src": {
         "name": "Mercedes-Benz Media",
         "url": "https://media.mercedes-benz.com/article/d8b5948f-c137-48c9-ab8c-e00c4fe598ab"
+      }
+    },
+    {
+      "id": "2026-11-08-f1-constructors",
+      "date": "2026-11-08",
+      "cat": "브랜드",
+      "kr": "해당 없음",
+      "title": "Mercedes-AMG F1 팀, 2026 컨스트럭터 월드 챔피언 확정",
+      "points": [
+        "Mercedes-AMG PETRONAS F1 팀이 11월 8일 F1 상파울루 그랑프리에서 2026 시즌 컨스트럭터(팀) 월드 챔피언을 확정했습니다.",
+        "이번 시즌 팀은 12번 우승했고, 2021년 이후 처음으로 팀 타이틀을 되찾았습니다.",
+        "Mercedes의 아홉 번째 컨스트럭터 타이틀로, 역대 팀 순위에서 Williams와 함께 공동 3위가 됐습니다."
+      ],
+      "note": "F1 팀 소식으로 차량 판매와는 관계가 없습니다.",
+      "photos": [],
+      "links": [],
+      "src": {
+        "name": "Mercedes-Benz Media",
+        "url": "https://media.mercedes-benz.com/article/87c6f37b-892b-402d-9b17-8ffa83d71379"
       }
     },
     {
