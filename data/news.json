@@ -51,6 +51,11 @@
       "note": "벤츠코리아 공식 발표로 국내 판매가 시작됐으며, 홈페이지 V-클래스 페이지에서 차량 정보를 볼 수 있습니다.",
       "photos": [
         {
+          "src": "https://www.autoview.co.kr/ko-kr/articles/102468",
+          "alt": "더 뉴 V-클래스",
+          "credit": "오토뷰"
+        },
+        {
           "src": "images/models/v300d.webp",
           "alt": "Mercedes-Benz V 300 d 4MATIC"
         }

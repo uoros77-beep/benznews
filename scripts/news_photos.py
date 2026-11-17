@@ -8,6 +8,7 @@ news-img/<id>.jpg 에 저장하고, photos 를 저장된 사진 주소로 바꿉
 사용: python scripts/news_photos.py   (테스트: NEWS_IMG_BASE, NEWS_TODAY 환경변수)"""
 import io, json, os, sys, urllib.parse
 from PIL import Image
+Image.MAX_IMAGE_PIXELS = 250_000_000
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
 NEWS = os.path.join(ROOT, 'data', 'news.json')
@@ -73,8 +74,10 @@ def grab(req, url, ref):
         if not r.ok:
             print('  응답', r.status, url[:150]); return None
         b = r.body()
-        if len(b) < 15000:
+        if len(b) < 15000 and 'html' not in (r.headers.get('content-type') or ''):
             print('  너무 작은 파일', len(b), url[:150]); return None
+        if 'html' in (r.headers.get('content-type') or ''):
+            return None
         im = Image.open(io.BytesIO(b))
         im.load()
         w, h = im.size
@@ -101,6 +104,39 @@ def candidates(page, src_url):
     except Exception as e:
         print('  원문 열기 실패', src_url[:90], type(e).__name__)
         return []
+
+
+MB = 'api.media.mercedes-benz.com/jsonapi/image/deliver/'
+
+
+def variants(u):
+    """벤츠 공식 보도사진은 같은 사진의 큰 크기를 먼저 시도합니다."""
+    if MB in u:
+        base = u.split('?')[0].rsplit('/', 1)[0]
+        return [base + '/' + v for v in ('original', '2560', '2048', '1920', '3_2_2048', '3_2_1920', '1600')] + [u]
+    return [u]
+
+
+def best_from(page, req, url, ref=None):
+    """주소가 사진이면 그 사진, 기사면 기사 안 대표 사진 중 가장 좋은 것."""
+    im = grab(req, url, ref or url)
+    if im is not None:
+        return im
+    seen, best = set(), None
+    for c in candidates(page, url):
+        for u in variants(c):
+            if u in seen or not u.startswith('http'):
+                continue
+            seen.add(u)
+            im = grab(req, u, url)
+            if im is None:
+                continue
+            if im.size[0] >= HQ:
+                return im
+            if im.size[0] >= LOW and (best is None or im.size[0] > best.size[0]):
+                best = im
+            break
+    return best
 
 
 def save(im, iid):
@@ -142,23 +178,14 @@ def main():
             for it, phs, ext, have in todo:
                 iid, src = it['id'], (it.get('src') or {})
                 print('소식', iid)
-                pick = None
+                pick, credit = None, str(src.get('name', ''))
                 if ext:
-                    pick = grab(ctx.request, ext, src.get('url'))
+                    pick = best_from(page, ctx.request, ext, src.get('url'))
+                    if pick is not None:
+                        credit = str(phs[0].get('credit') or urllib.parse.urlsplit(ext).hostname or credit)
                 if pick is None and web(src.get('url')):
-                    seen, best = set(), None
-                    for u in candidates(page, src['url']):
-                        if u in seen or not u.startswith('http'):
-                            continue
-                        seen.add(u)
-                        im = grab(ctx.request, u, src['url'])
-                        if im is None:
-                            continue
-                        if im.size[0] >= HQ:
-                            pick = im; break
-                        if im.size[0] >= LOW and (best is None or im.size[0] > best.size[0]):
-                            best = im
-                    pick = pick or best
+                    pick = best_from(page, ctx.request, src['url'])
+                    credit = str(src.get('name', ''))
                 if have:
                     miss['hq:' + iid] = miss.get('hq:' + iid, 0) + 1
                     if pick is None or pick.size[0] <= have:
@@ -172,7 +199,7 @@ def main():
                     continue
                 w, h = save(pick, iid)
                 alt = (phs[0].get('alt') if phs else '') or it.get('title', '')
-                it['photos'] = [{'src': BASE + iid + '.jpg', 'alt': str(alt)[:60], 'credit': str(src.get('name', ''))[:40],
+                it['photos'] = [{'src': BASE + iid + '.jpg', 'alt': str(alt)[:60], 'credit': credit[:40],
                                  'w': w, 'h': h}] + rest
                 miss.pop(iid, None)
                 if pick.size[0] >= HQ:
