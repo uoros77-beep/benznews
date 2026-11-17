@@ -51,9 +51,11 @@
       "note": "벤츠코리아 공식 발표로 국내 판매가 시작됐으며, 홈페이지 V-클래스 페이지에서 차량 정보를 볼 수 있습니다.",
       "photos": [
         {
-          "src": "https://www.autoview.co.kr/ko-kr/articles/102468",
+          "src": "https://raw.githubusercontent.com/uoros77-beep/benznews/main/news-img/2026-11-11-v-class-korea.jpg",
           "alt": "더 뉴 V-클래스",
-          "credit": "오토뷰"
+          "credit": "오토뷰",
+          "w": 1200,
+          "h": 813
         },
         {
           "src": "images/models/v300d.webp",
@@ -88,8 +90,8 @@
           "src": "https://raw.githubusercontent.com/uoros77-beep/benznews/main/news-img/2026-11-09-vle-4matic.jpg",
           "alt": "전기 MPV VLE, 사륜구동 VLE 400 4MATIC 주문 시작",
           "credit": "Mercedes-Benz Media",
-          "w": 960,
-          "h": 640
+          "w": 1600,
+          "h": 1067
         }
       ],
       "links": [
@@ -120,8 +122,8 @@
           "src": "https://raw.githubusercontent.com/uoros77-beep/benznews/main/news-img/2026-11-08-f1-constructors.jpg",
           "alt": "Mercedes-AMG F1 팀, 2026 컨스트럭터 월드 챔피언 확정",
           "credit": "Mercedes-Benz Media",
-          "w": 960,
-          "h": 689
+          "w": 1600,
+          "h": 1148
         }
       ],
       "links": [],
@@ -147,8 +149,8 @@
           "src": "https://raw.githubusercontent.com/uoros77-beep/benznews/main/news-img/2026-11-06-sl55-wta.jpg",
           "alt": "WTA 파이널 우승자에게 주는 단 한 대의 AMG SL 55 공개",
           "credit": "Mercedes-Benz Media",
-          "w": 960,
-          "h": 640
+          "w": 1600,
+          "h": 1067
         }
       ],
       "links": [],
@@ -174,8 +176,8 @@
           "src": "https://raw.githubusercontent.com/uoros77-beep/benznews/main/news-img/2026-11-03-future-tech.jpg",
           "alt": "유리창이 화면이 된다, 벤츠가 소개한 미래 기술",
           "credit": "Mercedes-Benz Media",
-          "w": 960,
-          "h": 640
+          "w": 1600,
+          "h": 1067
         }
       ],
       "links": [],
@@ -201,8 +203,8 @@
           "src": "https://raw.githubusercontent.com/uoros77-beep/benznews/main/news-img/2026-11-02-campaign-antonelli.jpg",
           "alt": "F1 챔피언 안토넬리와 함께, 벤츠 새 브랜드 캠페인 시작",
           "credit": "Mercedes-Benz Media",
-          "w": 960,
-          "h": 717
+          "w": 1600,
+          "h": 1195
         }
       ],
       "links": [
