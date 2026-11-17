@@ -113,7 +113,7 @@ def variants(u):
     """벤츠 공식 보도사진은 같은 사진의 큰 크기를 먼저 시도합니다."""
     if MB in u:
         base = u.split('?')[0].rsplit('/', 1)[0]
-        return [base + '/' + v for v in ('original', '2560', '2048', '1920', '3_2_2048', '3_2_1920', '1600')] + [u]
+        return [base + '/' + v for v in ('1920', '1600')] + [u]
     return [u]
 
 
