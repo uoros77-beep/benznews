@@ -1,0 +1,39 @@
+# 벤츠 동향 사진 자동 저장 · news.json 이 바뀌면 원문 기사 대표 사진을 고화질로 받아 news-img 에 저장
+name: news-photo
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/news.json"
+      - "scripts/news_photos.py"
+      - ".github/workflows/news-photo.yml"
+  schedule:
+    - cron: "17 1 * * *"
+  workflow_dispatch: {}
+permissions:
+  contents: write
+concurrency:
+  group: news-photo
+  cancel-in-progress: false
+jobs:
+  photo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install pillow playwright && python -m playwright install --with-deps chromium
+      - name: 사진 받기
+        run: python scripts/news_photos.py
+      - name: 검사
+        run: python scripts/check_news.py
+      - name: 저장
+        run: |
+          git config user.name  "benznews-bot"
+          git config user.email "bot@benznews.net"
+          git add -A data/news.json data/news_photo_miss.json news-img 2>/dev/null || git add -A data/news.json data/news_photo_miss.json
+          git diff --cached --quiet && exit 0
+          git commit -m "벤츠 동향 사진 저장 $(TZ=Asia/Seoul date +%F)"
+          for i in 1 2 3; do git pull --rebase && git push && exit 0; sleep 5; done
+          exit 1

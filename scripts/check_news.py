@@ -5,6 +5,7 @@ base = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data')
 path = sys.argv[1] if len(sys.argv) > 1 else os.path.join(base, 'news.json')
 photos = set(json.load(open(os.path.join(base, 'news_photos.json'), encoding='utf-8')))
 pages = set(json.load(open(os.path.join(base, 'news_pages.json'), encoding='utf-8')))
+HOST = 'https://raw.githubusercontent.com/uoros77-beep/benznews/main/news-img/'
 CATS = {"국내", "신차", "기술", "브랜드"}
 KR = {"국내 판매 중", "국내 출시 확정", "국내 출시 미정", "해당 없음"}
 err = []
@@ -44,8 +45,13 @@ for n, it in enumerate(items):
         for p in pts: text_ok(i, p, 15, 170, "points")
     if it.get('note'): text_ok(i, it['note'], 8, 120, "note")
     for ph in it.get('photos', []):
-        if ph.get('src') not in photos: bad(i, f"photos: 허용 목록에 없는 사진 {ph.get('src')}")
-        text_ok(i, ph.get('alt', ''), 2, 40, "photos.alt")
+        s0 = str(ph.get('src', ''))
+        if s0.startswith(HOST):
+            if s0 != HOST + str(it.get('id')) + '.jpg': bad(i, f"photos: 저장 사진 이름은 소식 id 와 같아야 함 {s0}")
+        elif not (s0 in photos or s0.startswith('https://')):
+            bad(i, f"photos: 사이트 사진 목록에 없거나 https 사진 주소가 아님 {s0}")
+        text_ok(i, ph.get('alt', ''), 2, 60, "photos.alt")
+        if ph.get('credit'): text_ok(i, ph['credit'], 2, 40, "photos.credit")
     for l in it.get('links', []):
         if l.get('href') not in pages: bad(i, f"links: 사이트에 없는 페이지 {l.get('href')}")
         text_ok(i, l.get('label', ''), 2, 30, "links.label")
