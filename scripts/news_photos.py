@@ -71,13 +71,14 @@ def grab(req, url, ref):
         r = req.get(url, headers={'Referer': ref or url, 'Accept': 'image/avif,image/webp,image/*,*/*;q=0.8'},
                     timeout=30000, max_redirects=5)
         if not r.ok:
-            return None
+            print('  응답', r.status, url[:150]); return None
         b = r.body()
         if len(b) < 15000:
-            return None
+            print('  너무 작은 파일', len(b), url[:150]); return None
         im = Image.open(io.BytesIO(b))
         im.load()
         w, h = im.size
+        print('  후보', w, 'x', h, url[:150])
         if h <= 0 or not 1.15 <= w / h <= 2.6:
             return None
         return to_rgb(im)
@@ -95,6 +96,7 @@ def candidates(page, src_url):
             pass
         page.wait_for_timeout(1500)
         out = page.evaluate(FIND, LOW)
+        print('  원문', page.url[:120], '후보 %d개' % len(out))
         return [urllib.parse.urljoin(page.url, u) for u in out]
     except Exception as e:
         print('  원문 열기 실패', src_url[:90], type(e).__name__)
@@ -119,12 +121,16 @@ def main():
     for it in d['items']:
         iid = str(it.get('id', ''))
         phs = [p for p in (it.get('photos') or []) if isinstance(p, dict)]
-        if not iid or (phs and hosted(phs[0], iid)):
+        if not iid:
+            continue
+        if phs and hosted(phs[0], iid):
+            if int(phs[0].get('w') or 0) < HQ and miss.get('hq:' + iid, 0) < 2:
+                todo.append((it, phs, None, int(phs[0].get('w') or 0)))
             continue
         ext = phs[0]['src'] if phs and web(phs[0].get('src')) else None
         if not ext and miss.get(iid, 0) >= 3:
             continue
-        todo.append((it, phs, ext))
+        todo.append((it, phs, ext, 0))
     changed = False
     if todo:
         from playwright.sync_api import sync_playwright
@@ -133,7 +139,7 @@ def main():
             ctx = b.new_context(user_agent=UA, locale='ko-KR', viewport={'width': 1440, 'height': 900},
                                 device_scale_factor=2)
             page = ctx.new_page()
-            for it, phs, ext in todo:
+            for it, phs, ext, have in todo:
                 iid, src = it['id'], (it.get('src') or {})
                 print('소식', iid)
                 pick = None
@@ -153,6 +159,10 @@ def main():
                         if im.size[0] >= LOW and (best is None or im.size[0] > best.size[0]):
                             best = im
                     pick = pick or best
+                if have:
+                    miss['hq:' + iid] = miss.get('hq:' + iid, 0) + 1
+                    if pick is None or pick.size[0] <= have:
+                        print('  더 큰 사진 없음'); continue
                 rest = [q for q in phs if not str(q.get('src', '')).startswith(('https://', 'http://'))]
                 if pick is None:
                     miss[iid] = miss.get(iid, 0) + 1
@@ -165,6 +175,8 @@ def main():
                 it['photos'] = [{'src': BASE + iid + '.jpg', 'alt': str(alt)[:60], 'credit': str(src.get('name', ''))[:40],
                                  'w': w, 'h': h}] + rest
                 miss.pop(iid, None)
+                if pick.size[0] >= HQ:
+                    miss.pop('hq:' + iid, None)
                 changed = True
                 print('  저장', w, 'x', h)
             b.close()
@@ -174,7 +186,7 @@ def main():
             if f.endswith('.jpg') and f not in keep:
                 os.remove(os.path.join(DIR, f)); print('지움', f)
     ids = {str(it.get('id')) for it in d['items']}
-    miss = {k: v for k, v in miss.items() if k in ids}
+    miss = {k: v for k, v in miss.items() if k.split(':')[-1] in ids}
     if changed:
         with open(NEWS, 'w', encoding='utf-8') as f:
             json.dump(d, f, ensure_ascii=False, indent=2); f.write('\n')
