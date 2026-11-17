@@ -13,7 +13,15 @@
         "가격은 부가세 포함, 개별소비세 5% 기준 GLE·GLE 쿠페 1억3,670만~1억4,080만원, GLS 1억5,200만~1억6,120만원입니다."
       ],
       "note": "벤츠코리아 공식 발표로 국내 판매가 시작됐으며, 홈페이지 GLE·GLS 페이지에서 차량 정보를 볼 수 있습니다.",
-      "photos": [],
+      "photos": [
+        {
+          "src": "https://raw.githubusercontent.com/uoros77-beep/benznews/main/news-img/2026-11-16-gle-gls-korea.jpg",
+          "alt": "부분변경 더 뉴 GLE·GLE 쿠페·GLS 국내 출시",
+          "credit": "파이낸셜뉴스",
+          "w": 1200,
+          "h": 800
+        }
+      ],
       "links": [
         {
           "href": "gle.html",
@@ -70,7 +78,15 @@
         "독일 시작 가격은 VLE 300 5인승 70,735.39유로, VLE 400 4MATIC 5인승 85,059.68유로(부가세 포함)이며, 좌석은 최대 8인승까지 고를 수 있습니다."
       ],
       "note": "이번 발표는 독일 기준이며, 국내 출시 일정과 가격은 아직 공식 발표되지 않았습니다.",
-      "photos": [],
+      "photos": [
+        {
+          "src": "https://raw.githubusercontent.com/uoros77-beep/benznews/main/news-img/2026-11-09-vle-4matic.jpg",
+          "alt": "전기 MPV VLE, 사륜구동 VLE 400 4MATIC 주문 시작",
+          "credit": "Mercedes-Benz Media",
+          "w": 960,
+          "h": 640
+        }
+      ],
       "links": [
         {
           "href": "vle.html",
@@ -94,7 +110,15 @@
         "Mercedes의 아홉 번째 컨스트럭터 타이틀로, 역대 팀 순위에서 Williams와 함께 공동 3위가 됐습니다."
       ],
       "note": "F1 팀 소식으로 차량 판매와는 관계가 없습니다.",
-      "photos": [],
+      "photos": [
+        {
+          "src": "https://raw.githubusercontent.com/uoros77-beep/benznews/main/news-img/2026-11-08-f1-constructors.jpg",
+          "alt": "Mercedes-AMG F1 팀, 2026 컨스트럭터 월드 챔피언 확정",
+          "credit": "Mercedes-Benz Media",
+          "w": 960,
+          "h": 689
+        }
+      ],
       "links": [],
       "src": {
         "name": "Mercedes-Benz Media",
@@ -113,7 +137,15 @@
         "대회는 11월 8일부터 15일까지 미국 캘리포니아 인디언웰스에서 처음 열리고, 차는 시상식에서 센터코트 위로 전달됩니다."
       ],
       "note": "우승자 한 명에게만 주는 시상용 차라 판매되는 차는 아닙니다.",
-      "photos": [],
+      "photos": [
+        {
+          "src": "https://raw.githubusercontent.com/uoros77-beep/benznews/main/news-img/2026-11-06-sl55-wta.jpg",
+          "alt": "WTA 파이널 우승자에게 주는 단 한 대의 AMG SL 55 공개",
+          "credit": "Mercedes-Benz Media",
+          "w": 960,
+          "h": 640
+        }
+      ],
       "links": [],
       "src": {
         "name": "Mercedes-Benz Media",
@@ -132,7 +164,15 @@
         "800V 배터리의 셀마다 전기 흐름을 관리하는 파워 컨버터도 공개됐습니다. 지금 세대는 최대 3kW이고, 차의 전기를 집이나 전력망으로 보내는 양방향 충전을 지원합니다."
       ],
       "note": "아직 연구 단계 기술입니다. 어떤 차에 언제 들어갈지는 발표되지 않았습니다.",
-      "photos": [],
+      "photos": [
+        {
+          "src": "https://raw.githubusercontent.com/uoros77-beep/benznews/main/news-img/2026-11-03-future-tech.jpg",
+          "alt": "유리창이 화면이 된다, 벤츠가 소개한 미래 기술",
+          "credit": "Mercedes-Benz Media",
+          "w": 960,
+          "h": 640
+        }
+      ],
       "links": [],
       "src": {
         "name": "Mercedes-Benz Media",
@@ -151,7 +191,15 @@
         "캠페인에는 Electric C-Class, 신형 GLA, Electric GLC, CLA, AMG GLE 53 쿠페, 신형 AMG GLC 53, 신형 AMG GT 4도어 쿠페가 함께 나옵니다."
       ],
       "note": "캠페인에 나온 차 가운데 Electric GLC와 CLA는 지금 국내에서 판매 중입니다.",
-      "photos": [],
+      "photos": [
+        {
+          "src": "https://raw.githubusercontent.com/uoros77-beep/benznews/main/news-img/2026-11-02-campaign-antonelli.jpg",
+          "alt": "F1 챔피언 안토넬리와 함께, 벤츠 새 브랜드 캠페인 시작",
+          "credit": "Mercedes-Benz Media",
+          "w": 960,
+          "h": 717
+        }
+      ],
       "links": [
         {
           "href": "glc-detail.html",
@@ -180,6 +228,13 @@
       ],
       "note": "트림별 사양과 이번 달 구매 조건은 아래 페이지에서 바로 보실 수 있습니다.",
       "photos": [
+        {
+          "src": "https://raw.githubusercontent.com/uoros77-beep/benznews/main/news-img/2026-10-19-kr-cla-glc-ev.jpg",
+          "alt": "Electric CLA",
+          "credit": "Korea Times",
+          "w": 1600,
+          "h": 1158
+        },
         {
           "src": "images/models/cla250-ev.webp",
           "alt": "Electric CLA"
@@ -212,7 +267,15 @@
         "GT 53은 유럽에서 10월부터 주문을 받고 시작 가격은 113,050유로입니다. GT 55와 GT 63은 2027년 4월께 유럽과 미국에 나올 예정입니다."
       ],
       "note": "국내 출시 일정과 가격은 아직 발표되지 않았습니다. 발표되면 바로 정리해 드리겠습니다.",
-      "photos": [],
+      "photos": [
+        {
+          "src": "https://raw.githubusercontent.com/uoros77-beep/benznews/main/news-img/2026-10-17-amg-gt-suv.jpg",
+          "alt": "최고 1,169마력 전기 SUV, Mercedes-AMG GT SUV 공개",
+          "credit": "New Atlas",
+          "w": 1200,
+          "h": 630
+        }
+      ],
       "links": [],
       "src": {
         "name": "New Atlas",
