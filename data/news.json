@@ -1,6 +1,49 @@
 {
-  "updated": "2026-11-17",
+  "updated": "2026-11-20",
   "items": [
+    {
+      "id": "2026-11-19-electric-glb-korea",
+      "date": "2026-11-19",
+      "cat": "국내",
+      "kr": "국내 판매 중",
+      "title": "디 올-뉴 Electric GLB 국내 출시, 6,990만원",
+      "points": [
+        "벤츠코리아가 MMA 플랫폼 기반 순수 전기 SUV Electric GLB(GLB 250+ 일렉트릭)를 국내에 출시했고, 11월 25일부터 고객 인도를 시작합니다.",
+        "85kWh 배터리로 국내 인증 기준 최대 435km(WLTP 631km)를 달리며, 800V 시스템으로 최대 320kW 급속 충전을 지원하고 출력은 272마력(200kW)입니다.",
+        "가격은 부가세 포함, 개별소비세 5% 기준 6,990만원이며 MB.OS, 4세대 MBUX, MBUX 슈퍼스크린, 파노라믹 루프가 기본입니다."
+      ],
+      "note": "벤츠코리아 공식 발표로 국내 판매가 시작됐으며, 홈페이지 Electric GLB 페이지에서 차량 정보를 볼 수 있습니다.",
+      "photos": [],
+      "links": [
+        {
+          "href": "glb-electric.html",
+          "label": "Electric GLB 보기"
+        }
+      ],
+      "src": {
+        "name": "아시아경제",
+        "url": "https://view.asiae.co.kr/article/2026111909142906957"
+      }
+    },
+    {
+      "id": "2026-11-18-c111-auction",
+      "date": "2026-11-18",
+      "cat": "브랜드",
+      "kr": "해당 없음",
+      "title": "전설의 C 111, 벤츠 역사상 처음으로 판매된다",
+      "points": [
+        "Mercedes-Benz Classic이 1970년 제작된 C 111-II 한 대를 회사 역사상 처음으로 판매합니다. 4로터 반켈 엔진으로 257kW(350마력), 최고속도 300km/h를 냅니다.",
+        "2027년 2월 3일 파리 레트로모빌 기간에 RM 소더비 경매로 판매되며, 벤츠는 앞으로 최소 25년간 다른 C 111을 팔지 않기로 했습니다.",
+        "판매 수익은 슈투트가르트 벤츠 박물관을 디지털로 전 세계에 여는 'Mercedes-Benz Museum 2.0' 프로젝트에 쓰입니다."
+      ],
+      "note": "차량 판매와 관계없는 브랜드 헤리티지 소식입니다.",
+      "photos": [],
+      "links": [],
+      "src": {
+        "name": "Mercedes-Benz Media",
+        "url": "https://media.mercedes-benz.com/article/efcef2e2-555d-4fab-8cb1-edd581a069cc"
+      }
+    },
     {
       "id": "2026-11-16-gle-gls-korea",
       "date": "2026-11-16",
