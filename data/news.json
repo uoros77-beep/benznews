@@ -1,6 +1,30 @@
 {
-  "updated": "2026-11-22",
+  "updated": "2026-11-26",
   "items": [
+    {
+      "id": "2026-11-25-korea-11-models-glb",
+      "date": "2026-11-25",
+      "cat": "국내",
+      "kr": "국내 판매 중",
+      "title": "벤츠코리아 올해 신차 11종, Electric GLB 인도 시작",
+      "points": [
+        "메르세데스-벤츠 코리아가 11월 23일 제주에서 미디어 행사를 열고, 올해 신차와 부분변경 모델 11종을 선보이게 됐다고 밝혔습니다. 연초 계획한 10종보다 많습니다.",
+        "이 자리에서 디 올-뉴 Electric GLB(GLB 250+ Electric)를 국내 처음으로 실물 공개했습니다. Electric CLA에 이어 MMA 플랫폼을 쓰는 두 번째 국내 모델입니다.",
+        "85kWh 배터리로 국내 인증 기준 최대 435km를 달리고, 800V 기반 최대 320kW 급속 충전을 지원합니다. 고객 인도는 이번 주부터 시작됩니다."
+      ],
+      "note": "Electric GLB는 국내 판매 중인 모델이며, 자세한 내용은 Electric GLB 페이지에서 볼 수 있습니다.",
+      "photos": [],
+      "links": [
+        {
+          "href": "glb-electric.html",
+          "label": "Electric GLB 보기"
+        }
+      ],
+      "src": {
+        "name": "아시아투데이",
+        "url": "https://www.asiatoday.co.kr/kn/view.php?key=20261125010009956"
+      }
+    },
     {
       "id": "2026-11-20-p2p-kba-approval",
       "date": "2026-11-20",
