@@ -13,7 +13,15 @@
         "MB.OS 기반으로 무선(OTA) 업데이트를 지원하고, Microsoft와 Google 등의 AI를 함께 쓰는 가상 비서와 Google 지도 기반 내비게이션을 갖췄습니다. 더 강력한 모델은 2027년 중반 추가됩니다."
       ],
       "note": "유럽 주문 시작 소식이며, 신형 GLA의 국내 출시 일정은 벤츠코리아 공식 발표가 아직 없습니다.",
-      "photos": [],
+      "photos": [
+        {
+          "src": "https://raw.githubusercontent.com/uoros77-beep/benznews/main/news-img/2026-11-26-gla-hybrid.jpg",
+          "alt": "신형 GLA 하이브리드, 유럽에서 주문 시작",
+          "credit": "Mercedes-Benz Media",
+          "w": 1600,
+          "h": 1068
+        }
+      ],
       "links": [],
       "src": {
         "name": "Mercedes-Benz Media",
