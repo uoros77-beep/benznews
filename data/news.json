@@ -1,6 +1,25 @@
 {
-  "updated": "2026-11-26",
+  "updated": "2026-11-27",
   "items": [
+    {
+      "id": "2026-11-26-gla-hybrid",
+      "date": "2026-11-26",
+      "cat": "신차",
+      "kr": "국내 출시 미정",
+      "title": "신형 GLA 하이브리드, 유럽에서 주문 시작",
+      "points": [
+        "Mercedes-Benz가 11월 26일 48V 기술을 더한 신형 GLA 하이브리드의 유럽 주문을 시작했습니다. GLA 180, GLA 200, GLA 200 4MATIC, GLA 220, GLA 220 4MATIC 5가지입니다.",
+        "1.5L 4기통 엔진에 8단 변속기 안의 22kW 전기모터를 더해 시스템 출력은 115kW(156마력)부터 155kW(211마력)까지이며, 조건에 따라 시속 110km까지 전기로만 달릴 수 있습니다.",
+        "MB.OS 기반으로 무선(OTA) 업데이트를 지원하고, Microsoft와 Google 등의 AI를 함께 쓰는 가상 비서와 Google 지도 기반 내비게이션을 갖췄습니다. 더 강력한 모델은 2027년 중반 추가됩니다."
+      ],
+      "note": "유럽 주문 시작 소식이며, 신형 GLA의 국내 출시 일정은 벤츠코리아 공식 발표가 아직 없습니다.",
+      "photos": [],
+      "links": [],
+      "src": {
+        "name": "Mercedes-Benz Media",
+        "url": "https://media.mercedes-benz.com/article/450adc09-353c-4bb6-b108-1ee0ebbbdfcc"
+      }
+    },
     {
       "id": "2026-11-25-korea-11-models-glb",
       "date": "2026-11-25",
