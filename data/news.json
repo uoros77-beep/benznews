@@ -13,7 +13,15 @@
         "브라이트는 800V 전기차용 무인 무선충전 기술을 검증해, 차량과 충전 장치의 위치를 맞추는 부담을 줄이는 기술을 소개했습니다."
       ],
       "note": "국내 스타트업과 함께한 기술 검증 소식으로, 바로 판매되는 차나 기능에 대한 발표는 아닙니다.",
-      "photos": [],
+      "photos": [
+        {
+          "src": "https://raw.githubusercontent.com/uoros77-beep/benznews/main/news-img/2026-11-27-startup-autobahn-korea.jpg",
+          "alt": "벤츠코리아, 국내 스타트업과 AI·무선충전 기술 검증",
+          "credit": "파이낸셜뉴스",
+          "w": 1200,
+          "h": 800
+        }
+      ],
       "links": [],
       "src": {
         "name": "파이낸셜뉴스",
